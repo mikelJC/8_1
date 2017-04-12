@@ -35,6 +35,7 @@ public class Agenda {
             t = Integer.parseInt(tec.readLine());
             System.out.println("Introduce Fecha nacimiento");
             f = tec.readLine();
+            f = comprobarfecha(f);
             System.out.println("Introduce notas");
             nt = tec.readLine();
 
@@ -117,7 +118,6 @@ public class Agenda {
 
         Collections.sort(aContactos);
 
-
         for (int i = 0; i < aContactos.size(); i++) {
             System.out.println(aContactos.get(i));
         }
@@ -196,6 +196,47 @@ public class Agenda {
         } else {
             return nocumple; //
         }
+    }
+
+    public String comprobarfecha(String fecha) throws ParseException, IOException {
+
+        String regex = "\\d\\d/\\d\\d/\\d\\d\\d\\d";
+
+        boolean error1 = false;
+        boolean error2 = false;
+        
+        while (error1 == false || error2 ==false) {
+        
+            if(fecha.matches(regex)==true){
+                error1=true;
+                
+                int dia = Integer.parseInt(fecha.substring(0, 2));
+                int mes = Integer.parseInt(fecha.substring(3, 5));
+                int ano = Integer.parseInt(fecha.substring(6, 10));
+                int anoactual = Calendar.YEAR;
+                
+                if (dia < 1 || dia > 31) {
+                    System.out.println("Día mal introducido");
+                }else{
+                    if (mes <1 || mes>12) {
+                        System.out.println("Mes mal introducido");
+                    }else{
+                        if(ano>anoactual || ano>1900){
+                            System.out.println("Año mal introducido");
+                        }else{
+                           error2=true;
+                        }
+                    }
+                }  
+            }else{
+                System.out.println("Formato fecha erroneo (dd/MM/yyyy)");
+            }
+
+            fecha = tec.readLine();
+
+        }
+
+        return fecha;
     }
 
 }

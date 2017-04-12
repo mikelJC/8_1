@@ -22,26 +22,30 @@ public class Principal {
 
     public Principal() throws IOException, ClassNotFoundException, ParseException {
         
-        //agen.leerfichero();
+        agen.leerfichero();
         menu();
     }
 
     public void menu() throws ClassNotFoundException, ParseException {
 
-        Contactos contacto1 = new Contactos("Juan", "Avenida las cruves", 123456789, "20/05/1900", "persona numero uno");
-        Contactos contacto2 = new Contactos("Luis", "Avenida las cruves", 123456789, "20/05/1900", "persona numero dos");
+        //Contactos contacto1 = new Contactos("Juan", "Avenida las cruves", 123456789, "20/05/1900", "persona numero uno");
+        //Contactos contacto2 = new Contactos("Luis", "Avenida las cruves", 123456789, "20/05/1900", "persona numero dos");
         //Contactos contacto3 = new Contactos("Andres", "Avenida las cruves", 123456789, "20/05/1900", "persona numero tres");
         //Contactos contacto4 = new Contactos("Luis", "Avenida las cruves", 123456789, "20/05/1900", "persona numero cuatro");
         BufferedReader tec = new BufferedReader(new InputStreamReader(System.in));
         
 
-        agen.aContactos.add(contacto1);
-        agen.aContactos.add(contacto2);
+        //agen.aContactos.add(contacto1);
+        //agen.aContactos.add(contacto2);
         //agen.aContactos.add(contacto3);
         //agen.aContactos.add(contacto4);
         int respuesta;
 
         try {
+            
+            
+            
+            
             do {
                 System.out.println("\n******MENU PRINCIPAL****** \n"
                         + "        " + "1.Añadir a agenda\n"
